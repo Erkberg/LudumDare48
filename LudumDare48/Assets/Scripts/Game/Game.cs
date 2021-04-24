@@ -9,6 +9,7 @@ public class Game : MonoBehaviour
 
     public GameUI ui;
     public GameProgress progress;
+    public GameInput input;
 
     public PlayerController player;
 

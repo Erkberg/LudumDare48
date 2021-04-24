@@ -41,6 +41,14 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Quit"",
+                    ""type"": ""Button"",
+                    ""id"": ""7a6a68f8-baaf-4324-97b1-8ba19d217280"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -329,6 +337,17 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""action"": ""VerticalMovement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""876668cd-f9e3-4181-a917-3f5031f36763"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Quit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -340,6 +359,7 @@ public class @Controls : IInputActionCollection, IDisposable
         m_DefaultMap_Dash = m_DefaultMap.FindAction("Dash", throwIfNotFound: true);
         m_DefaultMap_HorizontalMovement = m_DefaultMap.FindAction("HorizontalMovement", throwIfNotFound: true);
         m_DefaultMap_VerticalMovement = m_DefaultMap.FindAction("VerticalMovement", throwIfNotFound: true);
+        m_DefaultMap_Quit = m_DefaultMap.FindAction("Quit", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -392,6 +412,7 @@ public class @Controls : IInputActionCollection, IDisposable
     private readonly InputAction m_DefaultMap_Dash;
     private readonly InputAction m_DefaultMap_HorizontalMovement;
     private readonly InputAction m_DefaultMap_VerticalMovement;
+    private readonly InputAction m_DefaultMap_Quit;
     public struct DefaultMapActions
     {
         private @Controls m_Wrapper;
@@ -399,6 +420,7 @@ public class @Controls : IInputActionCollection, IDisposable
         public InputAction @Dash => m_Wrapper.m_DefaultMap_Dash;
         public InputAction @HorizontalMovement => m_Wrapper.m_DefaultMap_HorizontalMovement;
         public InputAction @VerticalMovement => m_Wrapper.m_DefaultMap_VerticalMovement;
+        public InputAction @Quit => m_Wrapper.m_DefaultMap_Quit;
         public InputActionMap Get() { return m_Wrapper.m_DefaultMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -417,6 +439,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @VerticalMovement.started -= m_Wrapper.m_DefaultMapActionsCallbackInterface.OnVerticalMovement;
                 @VerticalMovement.performed -= m_Wrapper.m_DefaultMapActionsCallbackInterface.OnVerticalMovement;
                 @VerticalMovement.canceled -= m_Wrapper.m_DefaultMapActionsCallbackInterface.OnVerticalMovement;
+                @Quit.started -= m_Wrapper.m_DefaultMapActionsCallbackInterface.OnQuit;
+                @Quit.performed -= m_Wrapper.m_DefaultMapActionsCallbackInterface.OnQuit;
+                @Quit.canceled -= m_Wrapper.m_DefaultMapActionsCallbackInterface.OnQuit;
             }
             m_Wrapper.m_DefaultMapActionsCallbackInterface = instance;
             if (instance != null)
@@ -430,6 +455,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @VerticalMovement.started += instance.OnVerticalMovement;
                 @VerticalMovement.performed += instance.OnVerticalMovement;
                 @VerticalMovement.canceled += instance.OnVerticalMovement;
+                @Quit.started += instance.OnQuit;
+                @Quit.performed += instance.OnQuit;
+                @Quit.canceled += instance.OnQuit;
             }
         }
     }
@@ -439,5 +467,6 @@ public class @Controls : IInputActionCollection, IDisposable
         void OnDash(InputAction.CallbackContext context);
         void OnHorizontalMovement(InputAction.CallbackContext context);
         void OnVerticalMovement(InputAction.CallbackContext context);
+        void OnQuit(InputAction.CallbackContext context);
     }
 }
