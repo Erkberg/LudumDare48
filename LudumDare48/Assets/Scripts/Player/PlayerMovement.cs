@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private GameInput input;
 
     private bool isDashing = false;
+    private Quaternion targetRotation;
 
     private void Awake()
     {
@@ -47,8 +48,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (movement.sqrMagnitude > 0.1f)
         {
-            Rotate(movement);
+            SetTargetRotation(movement);
         }
+        
+        Rotate();
     }
 
     private Vector2 CapY(Vector2 movement)
@@ -81,10 +84,15 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(dashDuration);
         isDashing = false;
     }
-    
-    private void Rotate(Vector2 movement)
+
+    private void SetTargetRotation(Vector2 movement)
     {
         float angle = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        targetRotation = Quaternion.AngleAxis(angle, Vector3.forward);
+    }
+    
+    private void Rotate()
+    {
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 0.5f);
     }
 }
