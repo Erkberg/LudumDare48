@@ -55,6 +55,7 @@ public class GameEnemies : MonoBehaviour
 
         Enemy instantiatedEnemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity, enemiesHolder);
         float moveSpeed = Random.Range(enemyData.minSpeed, enemyData.maxSpeed) * GetEnemiesMoveSpeedMultiplier();
+        Debug.Log(GetEnemiesMoveSpeedMultiplier());
         instantiatedEnemy.Init(moveSpeed, moveDirection, GetRandomAvailableQuote());
     }
 
@@ -78,6 +79,10 @@ public class GameEnemies : MonoBehaviour
 
     public float GetEnemiesMoveSpeedMultiplier()
     {
+        float overrideSpeedMultiplier = Game.inst.progress.GetCurrentLevelData().overrideSpeedMultiplier;
+        if (overrideSpeedMultiplier != 0f)
+            return overrideSpeedMultiplier;
+        
         if (Game.inst.progress.currentLevel == 0)
             return 1f;
         

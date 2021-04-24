@@ -10,16 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d72cadc238ecf264fb00604002d85f42, type: 3}
-  m_Name: LevelData01
+  m_Name: LevelDataTest
   m_EditorClassIdentifier: 
-  id: 1
-  depth: 50
-  enemySpawnTime: 2
-  overrideSpeedMultiplier: 0
+  id: 0
+  depth: 0
+  enemySpawnTime: 0.5
+  overrideSpeedMultiplier: 3
   enemyDatas:
   - {fileID: 11400000, guid: 74f29f2b52ae1ca49bea637c81068d08, type: 2}
+  - {fileID: 11400000, guid: f12d92b3a8eba8342b9a9343ad6891d7, type: 2}
+  - {fileID: 11400000, guid: 7a65ca03326819c49a3c3693e9b2e548, type: 2}
+  - {fileID: 11400000, guid: 93b0cab849933b54db0f359aa53633af, type: 2}
+  - {fileID: 11400000, guid: 9e4a1d47872dd8442b1e83a9e0f5e339, type: 2}
+  - {fileID: 11400000, guid: a5bb243ed4078d743a2d62a97f396541, type: 2}
   newQuotes:
   - {fileID: 11400000, guid: b6157ae22564f0f4ea250ccfb81cdeb1, type: 2}
-  - {fileID: 11400000, guid: dc3b4d4f0cc439747b006b99f97661ff, type: 2}
-  - {fileID: 11400000, guid: e54b82aceb3a7364cb1a666a7a9c7a04, type: 2}
-  - {fileID: 11400000, guid: 8d7bd0c57b92cd64d87338598931af92, type: 2}
