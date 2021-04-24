@@ -970,7 +970,7 @@ GameObject:
   - component: {fileID: 1193378876}
   m_Layer: 0
   m_Name: PlayerBody
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1068,6 +1068,7 @@ GameObject:
   - component: {fileID: 1194246350}
   - component: {fileID: 1194246349}
   - component: {fileID: 1194246352}
+  - component: {fileID: 1194246353}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -1103,6 +1104,7 @@ MonoBehaviour:
   ui: {fileID: 18242887}
   progress: {fileID: 1194246349}
   input: {fileID: 1194246352}
+  enemies: {fileID: 0}
   player: {fileID: 1020576005}
 --- !u!4 &1194246351
 Transform:
@@ -1129,6 +1131,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95c83602ea57cea40aaa57b3a07612ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1194246353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194246348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60b754cc6e5f23b4f8486af7be3865a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1292944409
@@ -1512,7 +1526,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
