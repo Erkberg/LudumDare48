@@ -7,4 +7,5 @@ public class GameUI : MonoBehaviour
     public IrrationalityMeter irrationalityMeter;
     public GameObject titleScreenOverlay;
     public GameObject pauseMenuOverlay;
+    public EnemyCompass enemyCompass;
 }

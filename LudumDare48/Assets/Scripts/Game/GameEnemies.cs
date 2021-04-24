@@ -16,7 +16,7 @@ public class GameEnemies : MonoBehaviour
     
     private void Update()
     {
-        if (DoesCurrentLevelHaveEnemies())
+        if (DoesCurrentLevelHaveEnemies() && Game.inst.currentState == Game.GameState.Ingame)
         {
             CountSpawnEnemies();    
         }
