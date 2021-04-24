@@ -13,7 +13,6 @@ public class EnemyCompass : MonoBehaviour
     {
         if (!trackedEnemies.Contains(enemyTransform))
         {
-            Debug.Log("add enemy");
             trackedEnemies.Add(enemyTransform);
             EnemyCompassIndicator indicator = Instantiate(indicatorPrefab, transform);
             indicator.target = enemyTransform;
@@ -25,7 +24,6 @@ public class EnemyCompass : MonoBehaviour
     {
         if (trackedEnemies.Contains(enemyTransform))
         {
-            Debug.Log("remove enemy");
             trackedEnemies.Remove(enemyTransform);
             EnemyCompassIndicator indicator = GetIndicatorForTransform(enemyTransform);
             indicators.Remove(indicator);
