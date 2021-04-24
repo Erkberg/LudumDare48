@@ -16,7 +16,7 @@ MonoBehaviour:
   depth: 0
   enemySpawnTime: 1
   enemyDatas:
-  - {fileID: 11400000, guid: 93b0cab849933b54db0f359aa53633af, type: 2}
-  - {fileID: 11400000, guid: 9e4a1d47872dd8442b1e83a9e0f5e339, type: 2}
+  - {fileID: 11400000, guid: a5bb243ed4078d743a2d62a97f396541, type: 2}
+  - {fileID: 11400000, guid: a5bb243ed4078d743a2d62a97f396541, type: 2}
   newQuotes:
   - {fileID: 11400000, guid: b6157ae22564f0f4ea250ccfb81cdeb1, type: 2}
