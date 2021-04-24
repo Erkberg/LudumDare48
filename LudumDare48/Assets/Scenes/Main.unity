@@ -909,6 +909,8 @@ MonoBehaviour:
   rb2d: {fileID: 1193378877}
   moveSpeed: 4
   maxMoveSpeed: 20
+  dashSpeed: 16
+  dashDuration: 1
 --- !u!70 &1193378876
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
