@@ -1052,8 +1052,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
-  m_Direction: 0
+  m_Size: {x: 2, y: 1}
+  m_Direction: 1
 --- !u!50 &1193378877
 Rigidbody2D:
   serializedVersion: 4
@@ -1109,6 +1109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96c787f6bbaf8c84fa89a7004232f0be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelsList: {fileID: 11400000, guid: 680b65548a33ca048ac52c71f9211afb, type: 2}
   currentLevel: 1
   irrationality: 0
 --- !u!114 &1194246350
@@ -1168,6 +1169,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60b754cc6e5f23b4f8486af7be3865a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemiesPrefabs:
+  - {fileID: 3671205524564263473, guid: b09821046b6c4da4388c1a26d71000e2, type: 3}
+  enemiesHolder: {fileID: 6096295}
 --- !u!114 &1194246354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1180,7 +1184,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5783265bcae7b3c49b99469dcd6bf0a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelsList: {fileID: 11400000, guid: 680b65548a33ca048ac52c71f9211afb, type: 2}
   background: {fileID: 1130717154}
   newLevelPrefab: {fileID: 0}
 --- !u!114 &1194246355

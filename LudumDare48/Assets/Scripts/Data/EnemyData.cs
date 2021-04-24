@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyData : ScriptableObject
 {
     public EnemyType type;
+    public EnemySpawnBehaviour spawnBehaviour;
     public float minSpeed;
     public float maxSpeed;
 }

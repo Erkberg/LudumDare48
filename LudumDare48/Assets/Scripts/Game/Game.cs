@@ -27,6 +27,11 @@ public class Game : MonoBehaviour
         ui.irrationalityMeter.UpdateFill();
     }
 
+    public Vector3 GetPlayerPosition()
+    {
+        return refs.playerController.playerMovement.transform.position;
+    }
+
     private void OnDestroy()
     {
         inst = null;

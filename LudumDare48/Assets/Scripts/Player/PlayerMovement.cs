@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
         
         CheckDash(movement);
 
-        if (movement.sqrMagnitude > 0f)
+        if (movement.sqrMagnitude > 0.1f)
         {
             Rotate(movement);
         }

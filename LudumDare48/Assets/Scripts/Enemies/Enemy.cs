@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using ErksUnityLibrary;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -12,16 +13,22 @@ public class Enemy : MonoBehaviour
     public int moveDirection;
     public EnemyType type;
 
-    public void Init(float minSpeed, float maxSpeed, int moveDirection)
+    public void Init(float moveSpeed, int moveDirection)
     {
-        moveSpeed = Random.Range(minSpeed, maxSpeed);
+        this.moveSpeed = moveSpeed;
         this.moveDirection = moveDirection;
+
+        if (moveDirection == -1)
+        {
+            transform.SetScaleX(-1);
+        }
     }
     
     // Update is called once per frame
     void Update()
     {
         Move();
+        CheckOutOfBounds();
     }
 
     protected virtual void Move() { }
@@ -38,5 +45,17 @@ public class Enemy : MonoBehaviour
     {
         Game.inst.OnEnemyEnterPlayer(this);
         Destroy(gameObject);
+    }
+
+    private void CheckOutOfBounds()
+    {
+        Vector4 bounds = Game.inst.world.GetDisappearBounds();
+        bool insideBounds = transform.position.x > bounds.x && transform.position.x < bounds.y &&
+                            transform.position.y > bounds.z && transform.position.y < bounds.w;
+
+        if (!insideBounds)
+        {
+            Destroy(gameObject);
+        }
     }
 }

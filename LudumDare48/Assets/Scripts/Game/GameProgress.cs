@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameProgress : MonoBehaviour
 {
+    public LevelsList levelsList;
     public int currentLevel = 1;
     public float irrationality = 0f;
 
@@ -21,5 +22,10 @@ public class GameProgress : MonoBehaviour
     {
         irrationality = 0f;
         currentLevel = 1;
+    }
+    
+    public LevelData GetCurrentLevelData()
+    {
+        return levelsList.levels[currentLevel];
     }
 }
