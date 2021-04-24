@@ -370,6 +370,28 @@ public class @Controls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""fba35796-a1fc-4f2f-9377-40e081d01d3b"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Quit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6d17e97a-30ee-4e48-9ed4-2aa94ee2914d"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Quit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""62eebf1d-6470-4786-a6ab-118ae074a428"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",

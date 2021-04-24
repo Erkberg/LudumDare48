@@ -95,4 +95,9 @@ public class PlayerMovement : MonoBehaviour
     {
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 0.5f);
     }
+
+    public void SetRigidbodySimulated(bool simulated)
+    {
+        rb2d.simulated = simulated;
+    }
 }

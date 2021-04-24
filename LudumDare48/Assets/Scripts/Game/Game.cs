@@ -2,11 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
     public static Game inst;
 
+    public GameState currentState = GameState.StartScreen;
+    
     public GameUI ui;
     public GameProgress progress;
     public GameInput input;
@@ -20,6 +23,57 @@ public class Game : MonoBehaviour
         inst = this;
         
         world.Init();
+        refs.playerController.playerMovement.SetRigidbodySimulated(false);
+    }
+
+    private void Update()
+    {
+        CheckPauseMenu();
+    }
+
+    private void CheckPauseMenu()
+    {
+        if (input.GetQuitButtonDown())
+        {
+            switch (currentState)
+            {
+                case GameState.Ingame:
+                    ui.pauseMenuOverlay.SetActive(true);
+                    currentState = GameState.PauseMenu;
+                    Time.timeScale = 0f;
+                    break;
+                
+                case GameState.PauseMenu:
+                    ContinueGame();
+                    break;
+            }
+        }
+    }
+
+    public void StartGame()
+    {
+        ui.titleScreenOverlay.SetActive(false);
+        input.SetInputEnabled(true);
+        refs.playerController.playerMovement.SetRigidbodySimulated(true);
+        currentState = GameState.Ingame;
+    }
+
+    public void RestartGame()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void ContinueGame()
+    {
+        ui.pauseMenuOverlay.SetActive(false);
+        currentState = GameState.Ingame;
+        Time.timeScale = 1f;
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
     public void OnEnemyEnterPlayer(Enemy enemy)
@@ -36,5 +90,13 @@ public class Game : MonoBehaviour
     private void OnDestroy()
     {
         inst = null;
+    }
+
+    public enum GameState
+    {
+        Ingame,
+        StartScreen,
+        PauseMenu,
+        EndScreen
     }
 }

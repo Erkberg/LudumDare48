@@ -11,7 +11,6 @@ public class GameInput : MonoBehaviour
     private void Awake()
     {
         controls = new Controls();
-        SetInputEnabled(true);
     }
     
     public void SetInputEnabled(bool enabled)

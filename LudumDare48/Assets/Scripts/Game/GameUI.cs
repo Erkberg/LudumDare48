@@ -5,4 +5,6 @@ using UnityEngine;
 public class GameUI : MonoBehaviour
 {
     public IrrationalityMeter irrationalityMeter;
+    public GameObject titleScreenOverlay;
+    public GameObject pauseMenuOverlay;
 }
