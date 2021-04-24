@@ -13,6 +13,7 @@ public class Game : MonoBehaviour
     public GameEnemies enemies;
     public GameWorld world;
     public GameRefs refs;
+    public GameAudio audio;
 
     private void Awake()
     {
