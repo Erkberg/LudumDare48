@@ -1,11 +1,9 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using ErksUnityLibrary;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
-public class EnemyMovement04 : EnemyMovement
+public class EnemyMovement05 : EnemyMovement
 {
     public float wiggleAmount = 2f;
     public float wiggleDeviation = 1f;
@@ -22,9 +20,9 @@ public class EnemyMovement04 : EnemyMovement
 
     protected override void Move()
     {
-        rb2d.SetVelocityX(moveSpeed * moveDirection);
+        rb2d.SetVelocityY(moveSpeed * moveDirection);
 
-        float veloY = Mathf.Sin((Time.time - startTime) * timeMultiplier) * moveSpeed * wiggleAmount;
-        rb2d.SetVelocityY(veloY);
+        float veloX = Mathf.Sin((Time.time - startTime) * timeMultiplier) * moveSpeed * wiggleAmount;
+        rb2d.SetVelocityX(veloX);
     }
 }

@@ -1,14 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using ErksUnityLibrary;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EnemyMovement03 : EnemyMovement
 {
     public float chaseDuration = 10f;
+    public float chaseDurationDeviation = 3f;
     
     private float chaseDurationPassed = 0f;
-    
+
+    private void Awake()
+    {
+        chaseDuration += Random.Range(-chaseDurationDeviation, chaseDurationDeviation);
+    }
+
     public override void OnUpdate()
     {
         chaseDurationPassed += Time.deltaTime;
