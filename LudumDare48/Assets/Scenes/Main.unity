@@ -1112,6 +1112,7 @@ MonoBehaviour:
   levelsList: {fileID: 11400000, guid: 680b65548a33ca048ac52c71f9211afb, type: 2}
   currentLevel: 1
   irrationality: 0
+  availableQuoteDatas: []
 --- !u!114 &1194246350
 MonoBehaviour:
   m_ObjectHideFlags: 0

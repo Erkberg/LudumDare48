@@ -9,11 +9,12 @@ public class Enemy : MonoBehaviour
 {
     public Rigidbody2D rb2d;
     public Animator animator;
+    public Speechbubble speechbubble;
     public float moveSpeed;
     public int moveDirection;
     public EnemyType type;
 
-    public void Init(float moveSpeed, int moveDirection)
+    public void Init(float moveSpeed, int moveDirection, string text)
     {
         this.moveSpeed = moveSpeed;
         this.moveDirection = moveDirection;
@@ -21,7 +22,11 @@ public class Enemy : MonoBehaviour
         if (moveDirection == -1)
         {
             transform.SetScaleX(-1);
+            speechbubble.Flip();
         }
+        
+        speechbubble.SetText(text);
+        speechbubble.SetActive(true);
     }
     
     // Update is called once per frame

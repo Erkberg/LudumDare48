@@ -5,8 +5,10 @@ using UnityEngine;
 public class GameProgress : MonoBehaviour
 {
     public LevelsList levelsList;
+    
     public int currentLevel = 0;
     public float irrationality = 0f;
+    public List<QuoteData> availableQuoteDatas = new List<QuoteData>();
 
     public void AddIrrationality(float value)
     {
@@ -19,12 +21,25 @@ public class GameProgress : MonoBehaviour
     public void OnLevelBarrierReached(int levelId)
     {
         currentLevel = levelId;
+        AddNewQuotes();
+    }
+
+    private void AddNewQuotes()
+    {
+        foreach (QuoteData newQuote in levelsList.levels[currentLevel].newQuotes)
+        {
+            if (!availableQuoteDatas.Contains(newQuote))
+            {
+                availableQuoteDatas.Add(newQuote);
+            }
+        }
     }
     
     public void ResetProgress()
     {
         irrationality = 0f;
         currentLevel = 1;
+        availableQuoteDatas.Clear();
     }
     
     public LevelData GetCurrentLevelData()

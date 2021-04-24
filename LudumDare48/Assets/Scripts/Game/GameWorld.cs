@@ -35,6 +35,7 @@ public class GameWorld : MonoBehaviour
             addedDepth += levelData.depth;
             levelBarrier.localScale = new Vector3(1f / background.localScale.x, 1f / background.localScale.y, 1f);
             levelBarrier.position = new Vector3(background.position.x, -addedDepth * 1.28f, 0f);
+            levelBarrier.GetComponent<LevelBarrier>().levelId = levelData.id;
         }
     }
 

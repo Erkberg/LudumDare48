@@ -50,7 +50,12 @@ public class GameEnemies : MonoBehaviour
 
         Enemy instantiatedEnemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity, enemiesHolder);
         float moveSpeed = Random.Range(enemyData.minSpeed, enemyData.maxSpeed) * GetEnemiesMoveSpeedMultiplier();
-        instantiatedEnemy.Init(moveSpeed, moveDirection);
+        instantiatedEnemy.Init(moveSpeed, moveDirection, GetRandomAvailableQuote());
+    }
+
+    private string GetRandomAvailableQuote()
+    {
+        return Game.inst.progress.availableQuoteDatas.GetRandomItem().text;
     }
     
     private EnemyData GetSpawnableEnemyData()
