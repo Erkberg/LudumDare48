@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class GameEnemies : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float GetEnemiesMoveSpeedMultiplier()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        return Mathf.Sqrt(Game.inst.progress.currentLevel);
     }
 }

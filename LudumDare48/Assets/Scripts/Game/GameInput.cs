@@ -35,7 +35,7 @@ public class GameInput : MonoBehaviour
     
     public Vector2 GetMouseWorldPosition()
     {
-        return Game.inst.mainCam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        return Game.inst.refs.mainCam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
     }
     //--------------------------------------------------------------------------------------------------------------
     #endregion mouse

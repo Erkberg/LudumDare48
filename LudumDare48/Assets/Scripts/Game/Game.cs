@@ -11,18 +11,24 @@ public class Game : MonoBehaviour
     public GameProgress progress;
     public GameInput input;
     public GameEnemies enemies;
-
-    public PlayerController player;
-    public Camera mainCam;
+    public GameWorld world;
+    public GameRefs refs;
 
     private void Awake()
     {
         inst = this;
+        
+        world.Init();
     }
 
     public void OnEnemyEnterPlayer(Enemy enemy)
     {
         progress.AddIrrationality(0.1f);
         ui.irrationalityMeter.UpdateFill();
+    }
+
+    private void OnDestroy()
+    {
+        inst = null;
     }
 }

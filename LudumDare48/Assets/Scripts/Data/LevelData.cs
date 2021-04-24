@@ -6,7 +6,7 @@ using UnityEngine;
 public class LevelData : ScriptableObject
 {
     public int id;
-    public float length;
+    public float depth;
     public float enemySpawnTime;
     public List<EnemyData> enemyDatas;
     public List<QuoteData> newQuotes;

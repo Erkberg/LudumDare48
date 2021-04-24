@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
             movement = input.GetMouseWorldPosition() - (Vector2)transform.position;
         }
         
-        movement = movement.normalized;
+        movement = CapY(movement).normalized;
 
         // accelerate only when not at max speed or currently dashing
         if (rb2d.velocity.sqrMagnitude < maxMoveSpeed || isDashing)
@@ -49,6 +49,21 @@ public class PlayerMovement : MonoBehaviour
         {
             Rotate(movement);
         }
+    }
+
+    private Vector2 CapY(Vector2 movement)
+    {
+        if (transform.position.y > Game.inst.world.GetHighestY() && movement.y >= 0f)
+        {
+            movement.y = Physics2D.gravity.y;
+        }
+        
+        if (transform.position.y < Game.inst.world.GetLowestY() && movement.y <= 0f)
+        {
+            movement.y = -Physics2D.gravity.y;
+        }
+
+        return movement;
     }
 
     private void CheckDash(Vector2 movement)
