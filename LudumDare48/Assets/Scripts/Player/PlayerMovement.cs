@@ -29,6 +29,15 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 movement = new Vector2(input.GetHorizontalMovement(), input.GetVerticalMovement());
 
+        // support for mouse movement
+        if (input.GetLeftMouseButton())
+        {
+            movement = input.GetMouseWorldPosition() - (Vector2)transform.position;
+        }
+        
+        movement = movement.normalized;
+
+        // accelerate only when not at max speed or currently dashing
         if (rb2d.velocity.sqrMagnitude < maxMoveSpeed || isDashing)
         {
             rb2d.AddForce(movement * moveSpeed);

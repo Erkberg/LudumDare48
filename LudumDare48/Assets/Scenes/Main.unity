@@ -700,7 +700,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -1104,8 +1104,9 @@ MonoBehaviour:
   ui: {fileID: 18242887}
   progress: {fileID: 1194246349}
   input: {fileID: 1194246352}
-  enemies: {fileID: 0}
+  enemies: {fileID: 1194246353}
   player: {fileID: 1020576005}
+  mainCam: {fileID: 963194227}
 --- !u!4 &1194246351
 Transform:
   m_ObjectHideFlags: 0

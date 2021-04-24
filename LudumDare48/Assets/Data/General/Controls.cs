@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/Data/Controls.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Data/General/Controls.inputactions'
 
 using System;
 using System.Collections;
@@ -49,6 +49,14 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""LeftMouseButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""a4cba08a-87db-4814-be87-86f02737ae86"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -67,6 +75,17 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""4d831a63-2105-4fab-a85f-d5346b563281"",
                     ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7d715adb-2730-49b2-94a8-b4cdcb407584"",
+                    ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -348,6 +367,17 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""action"": ""Quit"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""62eebf1d-6470-4786-a6ab-118ae074a428"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LeftMouseButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -360,6 +390,7 @@ public class @Controls : IInputActionCollection, IDisposable
         m_DefaultMap_HorizontalMovement = m_DefaultMap.FindAction("HorizontalMovement", throwIfNotFound: true);
         m_DefaultMap_VerticalMovement = m_DefaultMap.FindAction("VerticalMovement", throwIfNotFound: true);
         m_DefaultMap_Quit = m_DefaultMap.FindAction("Quit", throwIfNotFound: true);
+        m_DefaultMap_LeftMouseButton = m_DefaultMap.FindAction("LeftMouseButton", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -413,6 +444,7 @@ public class @Controls : IInputActionCollection, IDisposable
     private readonly InputAction m_DefaultMap_HorizontalMovement;
     private readonly InputAction m_DefaultMap_VerticalMovement;
     private readonly InputAction m_DefaultMap_Quit;
+    private readonly InputAction m_DefaultMap_LeftMouseButton;
     public struct DefaultMapActions
     {
         private @Controls m_Wrapper;
@@ -421,6 +453,7 @@ public class @Controls : IInputActionCollection, IDisposable
         public InputAction @HorizontalMovement => m_Wrapper.m_DefaultMap_HorizontalMovement;
         public InputAction @VerticalMovement => m_Wrapper.m_DefaultMap_VerticalMovement;
         public InputAction @Quit => m_Wrapper.m_DefaultMap_Quit;
+        public InputAction @LeftMouseButton => m_Wrapper.m_DefaultMap_LeftMouseButton;
         public InputActionMap Get() { return m_Wrapper.m_DefaultMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -442,6 +475,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Quit.started -= m_Wrapper.m_DefaultMapActionsCallbackInterface.OnQuit;
                 @Quit.performed -= m_Wrapper.m_DefaultMapActionsCallbackInterface.OnQuit;
                 @Quit.canceled -= m_Wrapper.m_DefaultMapActionsCallbackInterface.OnQuit;
+                @LeftMouseButton.started -= m_Wrapper.m_DefaultMapActionsCallbackInterface.OnLeftMouseButton;
+                @LeftMouseButton.performed -= m_Wrapper.m_DefaultMapActionsCallbackInterface.OnLeftMouseButton;
+                @LeftMouseButton.canceled -= m_Wrapper.m_DefaultMapActionsCallbackInterface.OnLeftMouseButton;
             }
             m_Wrapper.m_DefaultMapActionsCallbackInterface = instance;
             if (instance != null)
@@ -458,6 +494,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Quit.started += instance.OnQuit;
                 @Quit.performed += instance.OnQuit;
                 @Quit.canceled += instance.OnQuit;
+                @LeftMouseButton.started += instance.OnLeftMouseButton;
+                @LeftMouseButton.performed += instance.OnLeftMouseButton;
+                @LeftMouseButton.canceled += instance.OnLeftMouseButton;
             }
         }
     }
@@ -468,5 +507,6 @@ public class @Controls : IInputActionCollection, IDisposable
         void OnHorizontalMovement(InputAction.CallbackContext context);
         void OnVerticalMovement(InputAction.CallbackContext context);
         void OnQuit(InputAction.CallbackContext context);
+        void OnLeftMouseButton(InputAction.CallbackContext context);
     }
 }

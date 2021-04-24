@@ -13,6 +13,7 @@ public class Game : MonoBehaviour
     public GameEnemies enemies;
 
     public PlayerController player;
+    public Camera mainCam;
 
     private void Awake()
     {

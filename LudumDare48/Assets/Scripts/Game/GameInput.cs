@@ -32,6 +32,11 @@ public class GameInput : MonoBehaviour
     {
         return Mouse.current.position.ReadValue();
     }
+    
+    public Vector2 GetMouseWorldPosition()
+    {
+        return Game.inst.mainCam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+    }
     //--------------------------------------------------------------------------------------------------------------
     #endregion mouse
 
@@ -51,6 +56,25 @@ public class GameInput : MonoBehaviour
 
     #region buttons
     //--------------------------------------------------------------------------------------------------------------
+    #region left mouse button
+    //--------------------------------------------------------------------------------------------------------------
+    public bool GetLeftMouseButtonDown()
+    {
+        return GetButtonDown(controls.DefaultMap.LeftMouseButton);
+    }
+    
+    public bool GetLeftMouseButton()
+    {
+        return GetButton(controls.DefaultMap.LeftMouseButton);
+    }
+    
+    public bool GetLeftMouseButtonUp()
+    {
+        return GetButtonUp(controls.DefaultMap.LeftMouseButton);
+    }
+    //--------------------------------------------------------------------------------------------------------------
+    #endregion left mouse button
+    
     #region quit button
     //--------------------------------------------------------------------------------------------------------------
     public bool GetQuitButtonDown()
