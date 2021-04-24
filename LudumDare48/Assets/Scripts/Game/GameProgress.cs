@@ -5,17 +5,20 @@ using UnityEngine;
 public class GameProgress : MonoBehaviour
 {
     public LevelsList levelsList;
-    public int currentLevel = 1;
+    public int currentLevel = 0;
     public float irrationality = 0f;
 
     public void AddIrrationality(float value)
     {
         irrationality += value;
+
+        if (irrationality > 1f)
+            irrationality = 1f;
     }
 
-    public void OnNewLevelReached()
+    public void OnLevelBarrierReached(int levelId)
     {
-        currentLevel++;
+        currentLevel = levelId;
     }
     
     public void ResetProgress()

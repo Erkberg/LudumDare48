@@ -6,7 +6,7 @@ using UnityEngine;
 public class GameWorld : MonoBehaviour
 {
     public Transform background;
-    public Transform newLevelPrefab;
+    public Transform levelBarrierPrefab;
 
     private const float SpawnOffsetX = 12f;
     private const float SpawnOffsetY = 8f;
@@ -14,7 +14,7 @@ public class GameWorld : MonoBehaviour
     public void Init()
     {
         AdjustBackgroundSizeAndPosition();
-        SpawnNewLevelObjects();
+        SpawnLevelBarriers();
     }
 
     private void AdjustBackgroundSizeAndPosition()
@@ -25,9 +25,17 @@ public class GameWorld : MonoBehaviour
         background.SetPositionY(totalDepth * -0.64f);
     }
 
-    private void SpawnNewLevelObjects()
+    private void SpawnLevelBarriers()
     {
+        float addedDepth = 0f;
         
+        foreach (LevelData levelData in Game.inst.progress.levelsList.levels)
+        {
+            Transform levelBarrier = Instantiate(levelBarrierPrefab, background);
+            addedDepth += levelData.depth;
+            levelBarrier.localScale = new Vector3(1f / background.localScale.x, 1f / background.localScale.y, 1f);
+            levelBarrier.position = new Vector3(background.position.x, -addedDepth * 1.28f, 0f);
+        }
     }
 
     public float GetHighestY()
