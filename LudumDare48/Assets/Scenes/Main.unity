@@ -1171,7 +1171,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesPrefabs:
-  - {fileID: 3671205524564263473, guid: b09821046b6c4da4388c1a26d71000e2, type: 3}
+  - {fileID: 4161285420071775798, guid: 46c0a4de840327440a1aeb379e0cdcae, type: 3}
+  - {fileID: 4161285420071775798, guid: d7aa1a15d709a304a960803db5ee4fd6, type: 3}
+  - {fileID: 4161285420071775798, guid: a87e78bdc3aba9e438fe25ac63f1ee6c, type: 3}
+  - {fileID: 4161285420071775798, guid: 153f1d64566a85b48aafaae044822674, type: 3}
+  - {fileID: 4161285420071775798, guid: 93fa82dfcbd0b284bbe0571fa6e207a6, type: 3}
+  - {fileID: 4161285420071775798, guid: a997f14d95a1d3c42bc4f27c9e47e03d, type: 3}
   enemiesHolder: {fileID: 6096295}
 --- !u!114 &1194246354
 MonoBehaviour:

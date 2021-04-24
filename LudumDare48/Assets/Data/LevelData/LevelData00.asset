@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   depth: 0
-  enemySpawnTime: 2
-  enemyDatas: []
-  newQuotes: []
+  enemySpawnTime: 1
+  enemyDatas:
+  - {fileID: 11400000, guid: f12d92b3a8eba8342b9a9343ad6891d7, type: 2}
+  newQuotes:
+  - {fileID: 11400000, guid: b6157ae22564f0f4ea250ccfb81cdeb1, type: 2}

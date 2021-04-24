@@ -43,8 +43,13 @@ public class GameEnemies : MonoBehaviour
                 moveDirection = spawnPosition.x > Game.inst.GetPlayerPosition().x ? -1 : 1;
                 break;
             
-            case EnemySpawnBehaviour.OnlyBottom:
-                spawnPosition = Game.inst.world.GetRandomBottomSpawnPosition();
+            case EnemySpawnBehaviour.OnlyVertical:
+                spawnPosition = Game.inst.world.GetRandomVerticalSpawnPosition();
+                moveDirection = spawnPosition.y > Game.inst.GetPlayerPosition().y ? -1 : 1;
+                break;
+            
+            case EnemySpawnBehaviour.Anywhere:
+                spawnPosition = Game.inst.world.GetRandomSpawnPosition();
                 break;
         }
 
@@ -73,6 +78,9 @@ public class GameEnemies : MonoBehaviour
 
     public float GetEnemiesMoveSpeedMultiplier()
     {
+        if (Game.inst.progress.currentLevel == 0)
+            return 1f;
+        
         return Mathf.Sqrt(Game.inst.progress.currentLevel);
     }
 

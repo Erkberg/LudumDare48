@@ -7,17 +7,16 @@ using Random = UnityEngine.Random;
 
 public class Enemy : MonoBehaviour
 {
+    public EnemyMovement enemyMovement;
     public Rigidbody2D rb2d;
     public Animator animator;
     public Speechbubble speechbubble;
-    public float moveSpeed;
-    public int moveDirection;
     public EnemyType type;
 
     public void Init(float moveSpeed, int moveDirection, string text)
     {
-        this.moveSpeed = moveSpeed;
-        this.moveDirection = moveDirection;
+        enemyMovement.moveSpeed = moveSpeed;
+        enemyMovement.moveDirection = moveDirection;
 
         if (moveDirection == -1)
         {
@@ -32,11 +31,9 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
+        enemyMovement.OnUpdate();
         CheckOutOfBounds();
     }
-
-    protected virtual void Move() { }
 
     private void OnTriggerEnter2D(Collider2D other)
     {

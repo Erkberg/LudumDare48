@@ -70,12 +70,18 @@ public class GameWorld : MonoBehaviour
         return new Vector3(posX, posY, 0f);
     }
     
-    public Vector3 GetRandomBottomSpawnPosition()
+    public Vector3 GetRandomVerticalSpawnPosition()
     {
         Vector3 playerPosition = Game.inst.GetPlayerPosition();
+        int direction = Random.Range(0f, 1f) < 0.5f ? -1 : 1;
         float posX = playerPosition.x + Random.Range(-SpawnOffsetX, SpawnOffsetX);
-        float posY = playerPosition.y + SpawnOffsetY;
+        float posY = playerPosition.y + direction * SpawnOffsetY;
         return new Vector3(posX, posY, 0f);
+    }
+
+    public Vector3 GetRandomSpawnPosition()
+    {
+        return Random.Range(0f, 1f) < 0.5f ? GetRandomHorizontalSpawnPosition() : GetRandomVerticalSpawnPosition();
     }
 
     public Vector4 GetDisappearBounds()

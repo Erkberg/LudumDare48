@@ -5,11 +5,16 @@ using UnityEngine;
 public enum EnemyType
 {
     Enemy01,
-    Enemy02
+    Enemy02,
+    Enemy03,
+    Enemy04,
+    Enemy05,
+    Enemy06
 }
 
 public enum EnemySpawnBehaviour
 {
     OnlyHorizontal,
-    OnlyBottom
+    OnlyVertical,
+    Anywhere
 }

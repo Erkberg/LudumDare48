@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using ErksUnityLibrary;
 using UnityEngine;
 
-public class Enemy01 : Enemy
+public class EnemyMovement02 : EnemyMovement
 {
     protected override void Move()
     {
-        rb2d.SetVelocityX(moveSpeed * moveDirection);
+        rb2d.SetVelocityY(moveSpeed * moveDirection);
     }
 }
