@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Animator animator;
+
+    private const string IsMovingBool = "IsMoving";
+    private const string DashTrigger = "Dash";
+
+    public void SetMoving(bool moving)
     {
-        
+        animator.SetBool(IsMovingBool, moving);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TriggerDash()
     {
-        
+        animator.SetTrigger(DashTrigger);
     }
 }

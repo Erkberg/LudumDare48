@@ -15,10 +15,12 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isDashing = false;
     private Quaternion targetRotation;
+    private PlayerAnimation playerAnimation;
 
     private void Awake()
     {
         input = Game.inst.input;
+        playerAnimation = Game.inst.refs.playerController.playerAnimation;
     }
 
     private void Update()
@@ -52,6 +54,8 @@ public class PlayerMovement : MonoBehaviour
         }
         
         Rotate();
+        
+        playerAnimation.SetMoving(movement != Vector2.zero);
     }
 
     private Vector2 CapY(Vector2 movement)
@@ -73,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!isDashing && input.GetDashButtonDown())
         {
+            playerAnimation.TriggerDash();
             isDashing = true;
             rb2d.AddForce(movement * dashSpeed, ForceMode2D.Impulse);
             StartCoroutine(DashSequence());
