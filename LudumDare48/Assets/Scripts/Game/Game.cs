@@ -78,9 +78,8 @@ public class Game : MonoBehaviour
 
     public void OnGameEndReached()
     {
-        ui.endingMenuOverlay.SetActive(true);
         currentState = GameState.EndScreen;
-        Time.timeScale = 0f;
+        StartCoroutine(world.ending.EndSequence());
     }
 
     public void OnEnemyEnterPlayer(Enemy enemy)

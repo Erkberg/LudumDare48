@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     public float maxMoveSpeed = 10f;
     public float dashSpeed = 100f;
     public float dashDuration = 0.5f;
+    
+    public bool inEndSeq = false;
 
     private GameInput input;
 
@@ -26,7 +28,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        Move();
+        if (inEndSeq)
+        {
+            rb2d.AddForce(Vector2.up * (moveSpeed * 1.5f));
+            SetTargetRotation(Vector2.up);
+            Rotate();
+            playerAnimation.SetMoving(true);
+        }
+        else
+        {
+            Move();
+        }
     }
 
     private void Move()

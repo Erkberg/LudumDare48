@@ -8,6 +8,7 @@ public class GameWorld : MonoBehaviour
     public Transform background;
     public List<Transform> forebackgrounds;
     public Transform levelBarrierPrefab;
+    public GameEnding ending;
 
     private const float SpawnOffsetX = 12f;
     private const float SpawnOffsetY = 8f;
@@ -44,6 +45,8 @@ public class GameWorld : MonoBehaviour
             levelBarrier.position = new Vector3(background.position.x, -addedDepth * 1.28f, 0f);
             levelBarrier.GetComponent<LevelBarrier>().levelId = levelData.id;
         }
+        
+        ending.transform.position = new Vector3(background.position.x, -addedDepth * 1.28f, 0f);
     }
 
     public float GetHighestY()
