@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isDashing = false;
     private Quaternion targetRotation;
     private PlayerAnimation playerAnimation;
+    private Vector2 currentLookDir;
 
     private void Awake()
     {
@@ -31,29 +32,31 @@ public class PlayerMovement : MonoBehaviour
     private void Move()
     {
         Vector2 movement = new Vector2(input.GetHorizontalMovement(), input.GetVerticalMovement());
+        Vector2 mouseDir = input.GetMouseWorldPosition() - (Vector2) transform.position;
 
         // support for mouse movement
         if (input.GetLeftMouseButton())
         {
-            movement = input.GetMouseWorldPosition() - (Vector2)transform.position;
+            movement = mouseDir;
         }
         
         movement = CapY(movement).normalized;
 
         // accelerate only when not at max speed or currently dashing
-        if (rb2d.velocity.sqrMagnitude < maxMoveSpeed || isDashing)
+        if (rb2d.velocity.sqrMagnitude < maxMoveSpeed && !isDashing)
         {
             rb2d.AddForce(movement * moveSpeed);
         }
         
-        CheckDash(movement);
-
         if (movement.sqrMagnitude > 0.1f)
         {
             SetTargetRotation(movement);
+            currentLookDir = movement;
         }
         
         Rotate();
+        
+        CheckDash(currentLookDir);
         
         playerAnimation.SetMoving(movement != Vector2.zero);
     }
@@ -77,6 +80,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!isDashing && input.GetDashButtonDown())
         {
+            Debug.DrawRay(transform.position, movement, Color.red, 1f);
             playerAnimation.TriggerDash();
             isDashing = true;
             rb2d.AddForce(movement * dashSpeed, ForceMode2D.Impulse);

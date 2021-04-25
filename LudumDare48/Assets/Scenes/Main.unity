@@ -2767,7 +2767,7 @@ MonoBehaviour:
   moveSpeed: 4
   maxMoveSpeed: 20
   dashSpeed: 12
-  dashDuration: 1
+  dashDuration: 0.5
 --- !u!70 &1193378876
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2797,7 +2797,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1
+  m_LinearDrag: 2
   m_AngularDrag: 0.05
   m_GravityScale: 0.01
   m_Material: {fileID: 0}
