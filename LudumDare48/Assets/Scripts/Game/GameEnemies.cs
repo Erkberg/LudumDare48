@@ -60,7 +60,8 @@ public class GameEnemies : MonoBehaviour
 
     private string GetRandomAvailableQuote()
     {
-        return Game.inst.progress.availableQuoteDatas.GetRandomItem().text;
+        QuoteData quoteData = Game.inst.progress.availableQuoteDatas.GetRandomItem();
+        return quoteData.texts[Random.Range(0, quoteData.texts.Count)];
     }
     
     private EnemyData GetSpawnableEnemyData()
@@ -84,8 +85,9 @@ public class GameEnemies : MonoBehaviour
         
         if (Game.inst.progress.currentLevel == 0)
             return 1f;
-        
-        return Mathf.Sqrt(Game.inst.progress.currentLevel);
+
+
+        return Mathf.Pow(Game.inst.progress.currentLevel, 1f / 3f);
     }
 
     private float GetCurrentSpawnTime()

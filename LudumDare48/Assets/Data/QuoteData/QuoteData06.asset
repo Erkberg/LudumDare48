@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d6363cae10d434691e7b884d013f3f, type: 3}
   m_Name: QuoteData06
   m_EditorClassIdentifier: 
-  text: The earth is flat! (and also hollow!)
+  id: 6
+  texts:
+  - The earth is flat! (and also hollow!)
+  - I once flew 200m high and can confirm that earth is indeed flat!

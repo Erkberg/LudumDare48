@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d6363cae10d434691e7b884d013f3f, type: 3}
   m_Name: QuoteData02
   m_EditorClassIdentifier: 
-  text: "Bill Gates\u2026 don\u2019t even get me started!"
+  id: 2
+  texts:
+  - "Bill Gates\u2026 don\u2019t even get me started!"
+  - Bill Gates tries to steal the sunlight from us!

@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d6363cae10d434691e7b884d013f3f, type: 3}
   m_Name: QuoteData03
   m_EditorClassIdentifier: 
-  text: Covid does not exist!
+  id: 3
+  texts:
+  - Covid-19 does not exist!
+  - 5G networks spread this pandemic, that's a fact!

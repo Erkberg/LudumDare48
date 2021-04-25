@@ -10,9 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64d6363cae10d434691e7b884d013f3f, type: 3}
-  m_Name: QuoteData01
+  m_Name: QuoteData12
   m_EditorClassIdentifier: 
-  id: 1
+  id: 12
   texts:
-  - Nazis? Not defeated, just hiding on the moon!
-  - Noone has ever seen the dark side of the moon...
+  - 9/11 was an inside job!
+  - Barack Obama is the antichrist!
+  - They've been in contact with aliens for decades...
+  - Trump will return!
+  - Fluoride in the water? Must be the communists plotting!
+  - Wheather reports? HA! They're making the weather!
+  - Moon landing? Yeah, pretty well made movie, but not real.

@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d6363cae10d434691e7b884d013f3f, type: 3}
   m_Name: QuoteData08
   m_EditorClassIdentifier: 
-  text: The holocaust is a lie!
+  id: 8
+  texts:
+  - The holocaust is a lie!
+  - Holocaust? Never heard of it, didn't happen.

@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d6363cae10d434691e7b884d013f3f, type: 3}
   m_Name: QuoteData05
   m_EditorClassIdentifier: 
-  text: Why are celebrities so successful? Obviously, they drink the blood of children!
+  id: 5
+  texts:
+  - How do celebrities stay young? Obviously, they drink the blood of children!
+  - They're harvesting our children!

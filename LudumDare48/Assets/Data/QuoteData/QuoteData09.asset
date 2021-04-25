@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64d6363cae10d434691e7b884d013f3f, type: 3}
-  m_Name: QuoteData01
+  m_Name: QuoteData09
   m_EditorClassIdentifier: 
-  id: 1
+  id: 9
   texts:
-  - Nazis? Not defeated, just hiding on the moon!
-  - Noone has ever seen the dark side of the moon...
+  - Climate change? What are you talking about?
+  - The climate change is completely natural and not man-made at all!
