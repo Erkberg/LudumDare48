@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
 {
     public EnemyMovement enemyMovement;
     public Rigidbody2D rb2d;
+    public Transform modelHolder;
     public Animator animator;
     public Speechbubble speechbubble;
     public EnemyType type;
@@ -18,11 +19,11 @@ public class Enemy : MonoBehaviour
         enemyMovement.moveSpeed = moveSpeed;
         enemyMovement.moveDirection = moveDirection;
 
-        if (moveDirection == -1)
+        /*if (moveDirection == -1)
         {
             transform.SetScaleX(-1);
             speechbubble.Flip();
-        }
+        }*/
         
         speechbubble.SetText(text);
         speechbubble.SetActive(true);
@@ -33,6 +34,12 @@ public class Enemy : MonoBehaviour
     {
         enemyMovement.OnUpdate();
         CheckOutOfBounds();
+        UpdateRotation();
+    }
+
+    private void UpdateRotation()
+    {
+        modelHolder.transform.up = rb2d.velocity.normalized;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

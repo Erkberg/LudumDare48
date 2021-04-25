@@ -15,6 +15,8 @@ MonoBehaviour:
   rb2d: {fileID: 5003421387104012610}
   moveSpeed: 0
   moveDirection: 0
+  wiggleAmount: 2
+  wiggleDeviation: 1
 --- !u!1001 &5393722464108694572
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22,6 +24,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 79445826424948209, guid: b09821046b6c4da4388c1a26d71000e2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 46d5b03066c6f2f40a4b1a60abf7ac75, type: 2}
     - target: {fileID: 443105733256177264, guid: b09821046b6c4da4388c1a26d71000e2, type: 3}
       propertyPath: m_Name
       value: Enemy05

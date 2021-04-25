@@ -22,6 +22,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 79445826424948209, guid: b09821046b6c4da4388c1a26d71000e2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 29a96e40089dab64ea36d1be364b3fcb, type: 2}
     - target: {fileID: 443105733256177264, guid: b09821046b6c4da4388c1a26d71000e2, type: 3}
       propertyPath: m_Name
       value: Enemy06
@@ -40,11 +44,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6359721357046053820, guid: b09821046b6c4da4388c1a26d71000e2, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 6359721357046053820, guid: b09821046b6c4da4388c1a26d71000e2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 6359721357046053820, guid: b09821046b6c4da4388c1a26d71000e2, type: 3}
       propertyPath: m_LocalPosition.x
