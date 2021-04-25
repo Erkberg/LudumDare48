@@ -93,6 +93,7 @@ public class PlayerMovement : MonoBehaviour
         if (!isDashing && input.GetDashButton())
         {
             playerAnimation.TriggerDash();
+            Game.inst.audio.PlayDashSound();
             isDashing = true;
             rb2d.AddForce(movement * dashSpeed, ForceMode2D.Impulse);
             StartCoroutine(DashSequence());

@@ -8,6 +8,8 @@ public class GameAudio : MonoBehaviour
     public List<AudioClip> musics;
     public List<AudioSource> audioSourcesMusic;
     public AudioSource audioSourceSounds;
+    public List<AudioClip> hitSounds;
+    public AudioClip dashSound;
 
     private int currentMusicId = 0;
     private int currentAudioSourceMusic = 0;
@@ -64,5 +66,15 @@ public class GameAudio : MonoBehaviour
     public void PlayOneShotRandomVolumePitch(AudioClip clip)
     {
         audioSourceSounds.PlayOneShotRandomVolumePitch(clip);
+    }
+
+    public void PlayHitSound()
+    {
+        audioSourceSounds.PlayOneShotRandomVolumePitch(hitSounds.GetRandomItem(), baseVolume: 0.5f);
+    }
+    
+    public void PlayDashSound()
+    {
+        audioSourceSounds.PlayOneShotRandomVolumePitch(dashSound, baseVolume: 0.15f);
     }
 }

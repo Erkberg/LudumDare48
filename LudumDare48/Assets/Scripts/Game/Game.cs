@@ -84,6 +84,7 @@ public class Game : MonoBehaviour
 
     public void OnEnemyEnterPlayer(Enemy enemy)
     {
+        audio.PlayHitSound();
         progress.AddIrrationality(0.1f);
         ui.irrationalityMeter.UpdateFill();
     }
