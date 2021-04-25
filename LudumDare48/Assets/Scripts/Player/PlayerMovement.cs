@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using ErksUnityLibrary;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -30,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (inEndSeq)
         {
-            rb2d.AddForce(Vector2.up * (moveSpeed * 1.5f));
+            rb2d.SetVelocityY(20f);
             SetTargetRotation(Vector2.up);
             Rotate();
             playerAnimation.SetMoving(true);
