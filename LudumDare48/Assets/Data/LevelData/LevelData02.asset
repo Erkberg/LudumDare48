@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 2
   depth: 40
-  enemySpawnTime: 1.5
+  enemySpawnTime: 1
   overrideSpeedMultiplier: 0
   musicId: 2
   enemyDatas:

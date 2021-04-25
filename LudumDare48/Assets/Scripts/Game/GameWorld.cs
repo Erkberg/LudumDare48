@@ -73,15 +73,15 @@ public class GameWorld : MonoBehaviour
         Vector3 playerPosition = Game.inst.GetPlayerPosition();
         int direction = Random.Range(0f, 1f) < 0.5f ? -1 : 1;
         float posX = playerPosition.x + direction * SpawnOffsetX;
-        float posY = playerPosition.y + Random.Range(-SpawnOffsetY, 0f);
+        float posY = playerPosition.y + Random.Range(-SpawnOffsetY * 2, 0f);
         return new Vector3(posX, posY, 0f);
     }
     
     public Vector3 GetRandomVerticalSpawnPosition()
     {
         Vector3 playerPosition = Game.inst.GetPlayerPosition();
-        int direction = Random.Range(0f, 1f) < 0.5f ? -1 : 1;
-        float posX = playerPosition.x + Random.Range(-SpawnOffsetX, SpawnOffsetX);
+        int direction = Random.Range(0f, 1f) < 0.75f ? -1 : 1;
+        float posX = playerPosition.x + Random.Range(-SpawnOffsetX * 0.75f, SpawnOffsetX * 0.75f);
         float posY = playerPosition.y + direction * SpawnOffsetY;
         return new Vector3(posX, posY, 0f);
     }
@@ -93,7 +93,7 @@ public class GameWorld : MonoBehaviour
 
     public Vector4 GetDisappearBounds()
     {
-        float disappearBoundsMultiplier = 1.5f;
+        float disappearBoundsMultiplier = 2f;
         Vector3 playerPosition = Game.inst.GetPlayerPosition();
         float boundsLeft = playerPosition.x - SpawnOffsetX * disappearBoundsMultiplier;
         float boundsRight = playerPosition.x + SpawnOffsetX * disappearBoundsMultiplier;

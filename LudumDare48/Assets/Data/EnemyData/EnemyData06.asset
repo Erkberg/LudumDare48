@@ -15,4 +15,4 @@ MonoBehaviour:
   type: 5
   spawnBehaviour: 2
   minSpeed: 1
-  maxSpeed: 4
+  maxSpeed: 3

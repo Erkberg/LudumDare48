@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: EnemyData01
   m_EditorClassIdentifier: 
   type: 0
-  minSpeed: 1
-  maxSpeed: 4
+  spawnBehaviour: 0
+  minSpeed: 2
+  maxSpeed: 6
