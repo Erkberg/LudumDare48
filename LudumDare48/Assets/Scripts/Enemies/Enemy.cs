@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
     {
         enemyMovement.moveSpeed = moveSpeed;
         enemyMovement.moveDirection = moveDirection;
+        animator.speed = moveSpeed / 4f;
 
         /*if (moveDirection == -1)
         {
