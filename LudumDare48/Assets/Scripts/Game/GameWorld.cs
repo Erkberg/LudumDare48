@@ -6,6 +6,7 @@ using UnityEngine;
 public class GameWorld : MonoBehaviour
 {
     public Transform background;
+    public List<Transform> forebackgrounds;
     public Transform levelBarrierPrefab;
 
     private const float SpawnOffsetX = 12f;
@@ -23,6 +24,12 @@ public class GameWorld : MonoBehaviour
         
         background.SetScaleY(totalDepth);
         background.SetPositionY(totalDepth * -0.64f);
+
+        foreach (Transform forebackgrounds in forebackgrounds)
+        {
+            forebackgrounds.SetScaleY(totalDepth / 2);
+            forebackgrounds.SetPositionY(totalDepth * -0.64f);
+        }
     }
 
     private void SpawnLevelBarriers()
