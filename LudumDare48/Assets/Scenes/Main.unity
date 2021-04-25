@@ -440,6 +440,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 119406261}
   m_CullTransparentMesh: 1
+--- !u!1 &138932224
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 138932225}
+  m_Layer: 0
+  m_Name: Plants
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &138932225
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138932224}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1338847043}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &182077186
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,19 +676,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6359721357046053820, guid: b09821046b6c4da4388c1a26d71000e2, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 6359721357046053820, guid: b09821046b6c4da4388c1a26d71000e2, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6359721357046053820, guid: b09821046b6c4da4388c1a26d71000e2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6359721357046053820, guid: b09821046b6c4da4388c1a26d71000e2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 6359721357046053820, guid: b09821046b6c4da4388c1a26d71000e2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -670,7 +700,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6359721357046053820, guid: b09821046b6c4da4388c1a26d71000e2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8315194174649246234, guid: b09821046b6c4da4388c1a26d71000e2, type: 3}
@@ -3760,6 +3790,7 @@ Transform:
   - {fileID: 6096295}
   - {fileID: 2072641696}
   - {fileID: 1769082859}
+  - {fileID: 138932225}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

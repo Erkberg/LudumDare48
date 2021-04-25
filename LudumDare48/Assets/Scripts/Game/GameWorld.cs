@@ -26,6 +26,7 @@ public class GameWorld : MonoBehaviour
         background.SetScaleY(totalDepth);
         background.SetPositionY(totalDepth * -0.64f);
 
+        totalDepth += 8;
         foreach (Transform forebackgrounds in forebackgrounds)
         {
             forebackgrounds.SetScaleY(totalDepth / 2);

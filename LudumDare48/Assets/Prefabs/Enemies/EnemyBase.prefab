@@ -305,6 +305,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6359721357046053820}
     m_Modifications:
+    - target: {fileID: 6418414778036424924, guid: 8d193a3243fa80849b16883d8f9e51ff, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6418414779715477021, guid: 8d193a3243fa80849b16883d8f9e51ff, type: 3}
       propertyPath: m_Name
       value: SpeechbubbleCanvas
@@ -379,7 +383,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6418414779715477025, guid: 8d193a3243fa80849b16883d8f9e51ff, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.44
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 6418414779715477025, guid: 8d193a3243fa80849b16883d8f9e51ff, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
