@@ -15,6 +15,7 @@ public class GameEnding : MonoBehaviour
         lightAnimator.SetTrigger("End");
         yield return new WaitForSeconds(2f);
         light.SetActive(false);
+        Game.inst.ui.irrationalityMeter.fillImage.gameObject.SetActive(false);
         
         bool badEnding = Game.inst.progress.irrationality >= 1f;
         if (badEnding)

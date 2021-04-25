@@ -90,9 +90,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void CheckDash(Vector2 movement)
     {
-        if (!isDashing && input.GetDashButtonDown())
+        if (!isDashing && input.GetDashButton())
         {
-            Debug.DrawRay(transform.position, movement, Color.red, 1f);
             playerAnimation.TriggerDash();
             isDashing = true;
             rb2d.AddForce(movement * dashSpeed, ForceMode2D.Impulse);
