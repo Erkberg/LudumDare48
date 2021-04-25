@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LevelData01
   m_EditorClassIdentifier: 
   id: 1
-  depth: 500
+  depth: 10
   enemySpawnTime: 2
   overrideSpeedMultiplier: 0
   switchMusic: 0

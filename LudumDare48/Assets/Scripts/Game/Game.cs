@@ -76,6 +76,13 @@ public class Game : MonoBehaviour
         Application.Quit();
     }
 
+    public void OnGameEndReached()
+    {
+        ui.endingMenuOverlay.SetActive(true);
+        currentState = GameState.EndScreen;
+        Time.timeScale = 0f;
+    }
+
     public void OnEnemyEnterPlayer(Enemy enemy)
     {
         progress.AddIrrationality(0.1f);

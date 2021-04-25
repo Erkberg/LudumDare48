@@ -20,8 +20,18 @@ public class GameProgress : MonoBehaviour
 
     public void OnLevelBarrierReached(int levelId)
     {
+        Debug.Log($"switch level to {levelId}");
         currentLevel = levelId;
         AddNewQuotes();
+        CheckEnding();
+    }
+
+    private void CheckEnding()
+    {
+        if (currentLevel == levelsList.levels.Count - 1)
+        {
+            Game.inst.OnGameEndReached();
+        }
     }
 
     private void AddNewQuotes()

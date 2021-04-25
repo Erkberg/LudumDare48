@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: LevelData08
   m_EditorClassIdentifier: 
   id: 8
-  depth: 50
+  depth: 40
   enemySpawnTime: 0.5
+  overrideSpeedMultiplier: 0
+  switchMusic: 0
   enemyDatas: []
   newQuotes:
   - {fileID: 11400000, guid: b6157ae22564f0f4ea250ccfb81cdeb1, type: 2}

@@ -46,7 +46,7 @@ public class GameWorld : MonoBehaviour
 
     public float GetLowestY()
     {
-        return -GetTotalDepth();
+        return -GetTotalDepth() * 1.28f;
     }
 
     public float GetTotalDepth()

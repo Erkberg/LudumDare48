@@ -10,15 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d72cadc238ecf264fb00604002d85f42, type: 3}
-  m_Name: LevelData05
+  m_Name: LevelData09
   m_EditorClassIdentifier: 
-  id: 5
+  id: 9
   depth: 40
-  enemySpawnTime: 0.8
+  enemySpawnTime: 0.5
   overrideSpeedMultiplier: 0
   switchMusic: 0
-  enemyDatas:
-  - {fileID: 11400000, guid: a5bb243ed4078d743a2d62a97f396541, type: 2}
-  - {fileID: 11400000, guid: 7a65ca03326819c49a3c3693e9b2e548, type: 2}
+  enemyDatas: []
   newQuotes:
   - {fileID: 11400000, guid: b6157ae22564f0f4ea250ccfb81cdeb1, type: 2}
