@@ -15,8 +15,12 @@ MonoBehaviour:
   id: 3
   depth: 50
   enemySpawnTime: 1
+  overrideSpeedMultiplier: 0
+  switchMusic: 0
   enemyDatas:
   - {fileID: 11400000, guid: f12d92b3a8eba8342b9a9343ad6891d7, type: 2}
   - {fileID: 11400000, guid: 7a65ca03326819c49a3c3693e9b2e548, type: 2}
   newQuotes:
-  - {fileID: 11400000, guid: b6157ae22564f0f4ea250ccfb81cdeb1, type: 2}
+  - {fileID: 11400000, guid: 3876f3421ccba144aa41be16afb84f81, type: 2}
+  - {fileID: 11400000, guid: 98f1a04443e5ec34bb6736fd524c1e48, type: 2}
+  - {fileID: 11400000, guid: 7b2481636d749eb41b23c482ecdf701b, type: 2}
