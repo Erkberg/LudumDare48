@@ -16,7 +16,7 @@ MonoBehaviour:
   depth: 40
   enemySpawnTime: 0.8
   overrideSpeedMultiplier: 0
-  switchMusic: 0
+  musicId: 5
   enemyDatas:
   - {fileID: 11400000, guid: a5bb243ed4078d743a2d62a97f396541, type: 2}
   - {fileID: 11400000, guid: 7a65ca03326819c49a3c3693e9b2e548, type: 2}

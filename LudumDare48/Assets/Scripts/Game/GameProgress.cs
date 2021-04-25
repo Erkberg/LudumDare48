@@ -24,6 +24,7 @@ public class GameProgress : MonoBehaviour
         currentLevel = levelId;
         AddNewQuotes();
         CheckEnding();
+        Game.inst.audio.OnMusicLevelChanged(GetCurrentLevelData().musicId);
     }
 
     private void CheckEnding()

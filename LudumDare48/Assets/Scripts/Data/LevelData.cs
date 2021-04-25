@@ -9,7 +9,7 @@ public class LevelData : ScriptableObject
     public float depth;
     public float enemySpawnTime;
     public float overrideSpeedMultiplier;
-    public bool switchMusic;
+    public int musicId;
     public List<EnemyData> enemyDatas;
     public List<QuoteData> newQuotes;
 }

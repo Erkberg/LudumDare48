@@ -654,9 +654,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: fe203843f0057e946be1973c672f37b4, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2862,7 +2862,7 @@ MonoBehaviour:
   enemies: {fileID: 1194246353}
   world: {fileID: 1194246354}
   refs: {fileID: 1194246355}
-  audio: {fileID: 0}
+  audio: {fileID: 1944269886}
 --- !u!4 &1194246351
 Transform:
   m_ObjectHideFlags: 0
@@ -3628,8 +3628,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 8300000, guid: fe203843f0057e946be1973c672f37b4, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -5302,7 +5302,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 344e5e93d8573e947ac110bfc8bbe3d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musics: []
+  musics:
+  - {fileID: 8300000, guid: fe203843f0057e946be1973c672f37b4, type: 3}
+  - {fileID: 8300000, guid: 37805abd1a0dbc34f82fce7980722447, type: 3}
+  - {fileID: 8300000, guid: 1e79a05b97d96b245a41a8d8aca74fe5, type: 3}
+  - {fileID: 8300000, guid: 7804fbfdb983a8d4aadfad63fcd0e931, type: 3}
+  - {fileID: 8300000, guid: d37618f8f9e52ac459e4e728120d15a3, type: 3}
+  - {fileID: 8300000, guid: fceaffc1c127b034bb0708aed13d6047, type: 3}
+  - {fileID: 8300000, guid: c32151a26d5651242a9eb45fa6101442, type: 3}
   audioSourcesMusic:
   - {fileID: 1387964219}
   - {fileID: 245664870}

@@ -11,16 +11,29 @@ public class GameAudio : MonoBehaviour
 
     private int currentMusicId = 0;
     private int currentAudioSourceMusic = 0;
-    private float musicFadeDuration = 0.5f;
+
+    private const float FadeDuration = 3f;
 
     public void OnMusicLevelChanged(int newLevel)
     {
+        if (newLevel != currentMusicId)
+        {
+            StartCoroutine(NewMusicLevelSequence(newLevel));
+        }
+    }
+
+    private IEnumerator NewMusicLevelSequence(int newLevel)
+    {
         currentMusicId = newLevel;
-        StartCoroutine(FadeOutAudioSource(audioSourcesMusic[currentAudioSourceMusic], musicFadeDuration));
+        StartCoroutine(FadeOutAudioSource(audioSourcesMusic[currentAudioSourceMusic], FadeDuration));
         
         currentAudioSourceMusic = currentAudioSourceMusic == 0 ? 1 : 0;
+        float time = audioSourcesMusic[currentAudioSourceMusic].time;
+        audioSourcesMusic[currentAudioSourceMusic].Stop();
         audioSourcesMusic[currentAudioSourceMusic].clip = musics[currentMusicId];
-        StartCoroutine(FadeInAudioSource(audioSourcesMusic[currentAudioSourceMusic], musicFadeDuration));
+        audioSourcesMusic[currentAudioSourceMusic].Play();
+        audioSourcesMusic[currentAudioSourceMusic].time = time;
+        yield return StartCoroutine(FadeInAudioSource(audioSourcesMusic[currentAudioSourceMusic], FadeDuration));
     }
 
     private IEnumerator FadeInAudioSource(AudioSource audioSource, float duration)
@@ -45,7 +58,7 @@ public class GameAudio : MonoBehaviour
         }
 
         audioSource.volume = 0f;
-        audioSource.Stop();
+        //audioSource.Stop();
     }
 
     public void PlayOneShotRandomVolumePitch(AudioClip clip)
