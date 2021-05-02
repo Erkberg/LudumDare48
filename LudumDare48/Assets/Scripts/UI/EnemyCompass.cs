@@ -7,14 +7,14 @@ public class EnemyCompass : MonoBehaviour
 {
     public List<Transform> trackedEnemies;
     public List<EnemyCompassIndicator> indicators;
-    public EnemyCompassIndicator indicatorPrefab;
+    public EnemyCompassPool pool;
 
     public void AddEnemy(Transform enemyTransform)
     {
         if (!trackedEnemies.Contains(enemyTransform))
         {
             trackedEnemies.Add(enemyTransform);
-            EnemyCompassIndicator indicator = Instantiate(indicatorPrefab, transform);
+            EnemyCompassIndicator indicator = pool.Pool.Get();
             indicator.target = enemyTransform;
             indicators.Add(indicator);
         }
@@ -27,7 +27,7 @@ public class EnemyCompass : MonoBehaviour
             trackedEnemies.Remove(enemyTransform);
             EnemyCompassIndicator indicator = GetIndicatorForTransform(enemyTransform);
             indicators.Remove(indicator);
-            Destroy(indicator.gameObject);
+            pool.Pool.Release(indicator);
         }
     }
 

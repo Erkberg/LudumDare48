@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using ErksUnityLibrary;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,9 +19,7 @@ public class IrrationalityMeter : MonoBehaviour
 
         if (value >= 1f)
         {
-            var fillImageColor = fillImage.color;
-            fillImageColor.r = 0.5f;
-            fillImage.color = fillImageColor;
+            fillImage.color.SetR(0.5f);
         }
     }
 }

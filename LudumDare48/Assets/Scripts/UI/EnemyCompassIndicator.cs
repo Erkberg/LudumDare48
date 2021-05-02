@@ -7,15 +7,6 @@ public class EnemyCompassIndicator : MonoBehaviour
 {
     public Transform target;
 
-    private float screenWidth;
-    private float screenHeight;
-
-    private void Awake()
-    {
-        screenWidth = Screen.width;
-        screenHeight = Screen.height;
-    }
-
     private void Update()
     {
         if (target)
